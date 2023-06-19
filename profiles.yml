@@ -1,0 +1,25 @@
+bike_store_fivetran:
+  target: dev
+  outputs:
+    dev:
+      type: snowflake
+      account: oikmakd-dg28707
+
+      # User/password auth
+      user: snowadmin
+      password: Qwerty@123
+
+      role: accountadmin
+      database: fivetran_database
+      warehouse: compute_wh
+      schema: business_layer
+      threads: 5
+      client_session_keep_alive: False
+      query_tag: dbt_fivetran
+
+      # optional
+      connect_retries: 0 # default 0
+      connect_timeout: 10 # default: 10
+      retry_on_database_errors: False # default: false
+      retry_all: False  # default: false
+      reuse_connections: False # default: false (available v1.4+)
