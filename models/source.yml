@@ -1,0 +1,21 @@
+version: 2
+
+sources:
+  - name: azure_sql_db_raw
+    database: yu-sqldb-001
+    schema: sales
+    tables:
+      - name: orders
+      - name: customers
+      - name: staffs
+      - name: stores
+      - name: order_items
+
+  - name: azure_sql_db_raw
+    database: yu-sqldb-001
+    schema: production
+    tables:
+      - name: brands
+      - name: categories
+      - name: products
+      - name: stocks
