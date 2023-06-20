@@ -1,7 +1,7 @@
 version: 2
 
 sources:
-  - name: azure_sql_db_raw
+  - name: sales
     database: yu-sqldb-001
     schema: sales
     tables:
@@ -11,7 +11,7 @@ sources:
       - name: stores
       - name: order_items
 
-  - name: azure_sql_db_raw
+  - name: production
     database: yu-sqldb-001
     schema: production
     tables:
