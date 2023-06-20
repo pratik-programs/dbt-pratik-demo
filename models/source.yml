@@ -1,9 +1,9 @@
 version: 2
 
 sources:
-  - name: sales
-    database: yu-sqldb-001
-    schema: sales
+  - name: FIVETRAN_DATABASE
+    database: FIVETRAN_DATABASE
+    schema: AZURE_SQL_DB_RAW_SALES
     tables:
       - name: orders
       - name: customers
@@ -11,9 +11,9 @@ sources:
       - name: stores
       - name: order_items
 
-  - name: production
-    database: yu-sqldb-001
-    schema: production
+  - name: FIVETRAN_DATABASE
+    database: FIVETRAN_DATABASE
+    schema: AZURE_SQL_DB_RAW_PRODUCTION
     tables:
       - name: brands
       - name: categories
