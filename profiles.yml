@@ -7,10 +7,10 @@ bike_store_fivetran:
 
       # User/password auth
       user: snowadmin
-      password: Qwerty@123
+      password: 'Qwerty@123'
 
       role: accountadmin
-      database: fivetran_database
+      database: FIVETRAN_DATABASE
       warehouse: compute_wh
       schema: business_layer
       threads: 5
