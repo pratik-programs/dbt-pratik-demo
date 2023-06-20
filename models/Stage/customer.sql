@@ -10,7 +10,7 @@ set
     STATE = stg.STATE,
     STREET = stg.STREET,
     upd_ts = current_timestamp
-from FIVETRAN_DATABASE.AZURE_SQL_DB_RAW_SALES.CUSTOMERS stg
+from ref('customers')--FIVETRAN_DATABASE.AZURE_SQL_DB_RAW_SALES.CUSTOMERS stg
 inner join FIVETRAN_DATABASE.BUSINESS_LAYER.CUSTOMERS dim on stg.customer_id = dim.customer_id
 ;
 
@@ -41,7 +41,7 @@ select
 	stg.STREET,
     TO_TIMESTAMP_NTZ(stg._FIVETRAN_SYNCED),
     current_timestamp
-    from FIVETRAN_DATABASE.AZURE_SQL_DB_RAW_SALES.CUSTOMERS stg
+    from ref('customers') --AZURE_SQL_DB_RAW_SALES.CUSTOMERS stg
     left join FIVETRAN_DATABASE.BUSINESS_LAYER.CUSTOMERS dim on stg.customer_id = dim.customer_id
 	where _FIVETRAN_DELETED  = 'FALSE'
     and dim.customer_id is null;
